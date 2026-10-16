@@ -10,3 +10,6 @@ precio DOUBLE PRECISION  NOT NULL,
 color VARCHAR(30),
 disponible BOOLEAN NOT NULL
 );
+
+ALTER TABLE vehiculos
+ADD kilometraje INT;

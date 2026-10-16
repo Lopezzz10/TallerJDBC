@@ -35,9 +35,11 @@ public class SelectVehiculo {
 				double precio = rs.getDouble("precio");
 				String color = rs.getString("color");
 				boolean disponible = rs.getBoolean("disponible");
+				int kilometraje = rs.getInt("kilometraje");
 
 				String info = "Vehículo: Placa: " + placa + " Marca: " + marca + " Modelo: " + modelo + " Año: " + anio
-						+ " Precio: " + precio + " Color: " + color + " Disponible: " + disponible;
+						+ " Precio: " + precio + " Color: " + color + " Disponible: " + disponible + " Kilometraje: "
+						+ kilometraje;
 				log.info(info);
 				System.out.println(info);
 				contador++;
