@@ -2,6 +2,7 @@ package com.krakdev.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,11 +33,14 @@ public class DeleteVehiculo {
 				System.out.println("No se encontró el vehículo. Filas eliminadas: " + filas);
 			}
 
+		} catch (SQLException e) {
+			log.error("Error SQL al eliminar vehículo: {}", e.getMessage());
+			System.out.println("Error SQL al eliminar vehículo: " + e.getMessage());
 		} catch (Exception e) {
 			log.error("Error al eliminar vehículo: {}", e.getMessage());
 			System.out.println("Error al eliminar vehículo: " + e.getMessage());
 		} finally {
-			Conexion.cerrar(con);
+			Conexion.cerrar(null, ps, con);
 		}
 	}
 }

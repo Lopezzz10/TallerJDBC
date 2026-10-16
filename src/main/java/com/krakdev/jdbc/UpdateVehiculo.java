@@ -2,6 +2,7 @@ package com.krakdev.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,11 +40,14 @@ public class UpdateVehiculo {
 				System.out.println("No se encontró el vehículo. Filas afectadas: " + filas);
 			}
 
+		} catch (SQLException e) {
+			log.error("Error SQL al actualizar vehículo: {}", e.getMessage());
+			System.out.println("Error SQL al actualizar vehículo: " + e.getMessage());
 		} catch (Exception e) {
 			log.error("Error al actualizar vehículo: {}", e.getMessage());
 			System.out.println("Error al actualizar vehículo: " + e.getMessage());
 		} finally {
-			Conexion.cerrar(con);
+			Conexion.cerrar(null, ps, con);
 		}
 	}
 }

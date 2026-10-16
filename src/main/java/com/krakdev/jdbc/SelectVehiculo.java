@@ -3,6 +3,7 @@ package com.krakdev.jdbc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,11 +45,14 @@ public class SelectVehiculo {
 			log.info("Vehículos listados: {}", contador);
 			System.out.println("Vehículos listados: " + contador);
 
+		} catch (SQLException e) {
+			log.error("Error SQL al listar vehículos: {}", e.getMessage());
+			System.out.println("Error SQL al listar vehículos: " + e.getMessage());
 		} catch (Exception e) {
 			log.error("Error al listar vehículos: {}", e.getMessage());
 			System.out.println("Error al listar vehículos: " + e.getMessage());
 		} finally {
-			Conexion.cerrar(con);
+			Conexion.cerrar(rs, ps, con);
 		}
 	}
 }

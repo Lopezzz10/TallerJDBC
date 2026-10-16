@@ -2,6 +2,8 @@ package com.krakdev.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.slf4j.Logger;
@@ -38,5 +40,23 @@ public class Conexion {
 				log.error("Error al cerrar la conexión: {}", e.getMessage(), e);
 			}
 		}
+	}
+
+	public static void cerrar(ResultSet rs, PreparedStatement ps, Connection con) {
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				log.error("Error al cerrar el ResultSet: {}", e.getMessage(), e);
+			}
+		}
+		if (ps != null) {
+			try {
+				ps.close();
+			} catch (SQLException e) {
+				log.error("Error al cerrar el PreparedStatement: {}", e.getMessage(), e);
+			}
+		}
+		cerrar(con);
 	}
 }
