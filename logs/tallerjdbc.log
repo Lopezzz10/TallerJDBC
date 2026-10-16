@@ -1,0 +1,7 @@
+2026-10-15 22:05:25 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [tallerjdbc.TallerjdbcApplicationTests]: TallerjdbcApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-15 22:05:26 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration tallerjdbc.TallerjdbcApplication for test class tallerjdbc.TallerjdbcApplicationTests
+2026-10-15 22:05:26 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [tallerjdbc.TallerjdbcApplicationTests]: TallerjdbcApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-15 22:05:26 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration tallerjdbc.TallerjdbcApplication for test class tallerjdbc.TallerjdbcApplicationTests
+2026-10-15 22:05:26 [main] INFO  t.TallerjdbcApplicationTests - Starting TallerjdbcApplicationTests using Java 25 with PID 9684 (started by josem in C:\Users\josem\Downloads\tallerjdbc\tallerjdbc)
+2026-10-15 22:05:26 [main] INFO  t.TallerjdbcApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-10-15 22:05:27 [main] INFO  t.TallerjdbcApplicationTests - Started TallerjdbcApplicationTests in 1.111 seconds (process running for 2.207)
